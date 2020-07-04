@@ -1,0 +1,105 @@
+.page-header__logo-link {
+  display: block;
+  width: 122px;
+  height: 107px;
+  background-color: $grey;
+  margin-right: 10px;
+}
+
+.page-header {
+  padding: 0 10px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: $white;
+  z-index: 10;
+}
+
+.page-header__mobile-wrap {
+  display: flex;
+  width: 44%;
+  justify-content: space-between;
+  margin-right: 10px;
+}
+
+.page-header__wrap {
+  padding: 25px 0;
+  margin: 0 auto;
+  max-width: 1400px;
+  width: 100%;
+  border-bottom: 1px solid $dark-grey;
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-header__block {
+  display: block;
+  height: 107px;
+  width: 65%;
+  background-color: $grey;
+}
+
+.page-header__contacts {
+  width: 53.39%;
+  background-color: $grey;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 20px;
+}
+
+.page-header__phone,
+.page-header__mail {
+  color: $white;
+  position: relative;
+  transition: all 0.6s;
+}
+
+.page-header__phone::before,
+.page-header__mail::before {
+  content: "";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  background-color: $orange;
+  transition: all 0.3s;
+}
+
+.page-header__phone:hover::before,
+.page-header__mail:hover::before,
+.page-header__phone:focus::before,
+.page-header__mail:focus::before {
+  width: 100%;
+  left: 0;
+  background-color: $orange;
+}
+
+.page-header__phone:hover,
+.page-header__mail:hover,
+.page-header__phone:focus,
+.page-header__mail:focus {
+  color: $orange;
+}
+
+@media (max-width: $mobile-width) {
+  .page-header__wrap {
+    flex-direction: column;
+  }
+
+  .page-header__mobile-wrap {
+    margin-right: 0;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .page-header__block {
+    width: 100%;
+  }
+
+  .page-header__contacts {
+    width: 100%;
+  }
+}

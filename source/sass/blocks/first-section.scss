@@ -1,0 +1,257 @@
+.first-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 17px 0 35px;
+  max-width: 1420px;
+  width: 100%;
+  margin: 160px auto 0;
+}
+
+.first-section__creation {
+  background-color: $grey;
+  color: $white;
+  padding: 13px 25px 8px 9px;
+}
+
+.first-section__left-slogan {
+  margin: 0;
+  font-weight: 700;
+}
+
+.first-section__creation-text {
+  margin: 0;
+}
+
+.first-section__left {
+  width: 185px;
+  margin-left: 10px;
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  &--fixed {
+    position: relative;
+
+    .first-section__creation {
+      position: fixed;
+      top: 177px;
+      width: 185px;
+    }
+
+    .first-section__left-down {
+      margin-top: auto;
+    }
+  }
+}
+
+.first-section__left-down {
+  background-color: $grey;
+  width: 100%;
+  height: 132px;
+  margin-top: 20px;
+}
+
+.first-section__center {
+  width: 78.95%;
+  display: flex;
+  flex-direction: column;
+}
+
+.first-section__center-slogan {
+  margin: 0 0 23px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.first-section__layout {
+  background-color: $light-grey;
+  padding: 15px 17px;
+  margin: 0 10px 20px;
+}
+
+.first-section__feature-name {
+  font-weight: 700;
+  margin-right: 3px;
+}
+
+.first-section__feature-item span {
+  font-weight: 700;
+}
+
+.first-section__feature-item {
+  position: relative;
+  display: flex;
+}
+
+.first-section__feature-item::before {
+  position: absolute;
+  content: "";
+  left: -6px;
+  top: 10px;
+  width: 3px;
+  height: 3px;
+  background-color: $grey;
+}
+
+.first-section__feature-list {
+  @include reset-list;
+
+  margin: 0 0 20px 5.65%;
+  display: flex;
+  flex-direction: column;
+}
+
+.first-section__cards-list {
+  @include reset-list;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex-grow: 1;
+  height: 100%;
+}
+
+.first-section__card {
+  width: 136px;
+  height: 153px;
+  background-color: $light-grey;
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px;
+  margin: 0 10px 20px;
+  position: relative;
+  transition-property: bottom, box-shadow;
+  transition-duration: 0.5s;
+  transition-delay: 0.2s;
+  bottom: 0;
+  box-shadow: none;
+}
+
+.first-section__card:hover {
+  bottom: 5px;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.first-section__card .first-section__bag-icon {
+  color: $black;
+  transition-property: color;
+  transition-duration: 0.5s;
+  transition-delay: 0.2s;
+}
+
+.first-section__card:hover .first-section__bag-icon {
+  color: $orange;
+}
+
+.first-section__buy-button {
+  @include reset-button;
+
+  width: 22px;
+  height: 22px;
+}
+
+.first-section__buy-button:hover .first-section__bag-icon,
+.first-section__buy-button:focus .first-section__bag-icon {
+  color: $red;
+}
+
+.first-section__buy-button:active .first-section__bag-icon {
+  opacity: 0.7;
+}
+
+.first-section__left-text-column,
+.first-section__right-text-column {
+  background-color: $light-grey;
+  padding: 15px 15px 60px;
+  width: 50%;
+}
+
+.first-section__left-text-column {
+  margin-right: 20px;
+}
+
+.first-section__text-wrap {
+  margin: 0 10px;
+  display: flex;
+}
+
+.first-section__center-text {
+  margin: 0 0 30px;
+
+  &--1 {
+    margin-bottom: 21px;
+  }
+
+  &--2 {
+    margin-bottom: 22px;
+  }
+
+  &--3 {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .first-section__text-wrap {
+    margin-left: 0;
+    flex-direction: column;
+  }
+
+  .first-section__left-text-column {
+    margin-right: 0;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .first-section__right-text-column {
+    width: 100%;
+  }
+
+  .first-section__cards-list {
+    justify-content: center;
+  }
+
+  .first-section {
+    margin-top: 252px;
+    flex-direction: column;
+  }
+
+  .first-section__creation {
+    width: 100%;
+    margin-right: 10px;
+  }
+
+  .first-section__center {
+    width: 100%;
+  }
+
+  .first-section__left-down {
+    margin-top: 0;
+    width: 40%;
+  }
+
+  .first-section__left {
+    flex-direction: row;
+    justify-content: space-between;
+    width: auto;
+    margin-right: 10px;
+    margin-bottom: 20px;
+
+    &--fixed {
+      flex-direction: row;
+
+      .first-section__creation {
+        position: static;
+        width: 100%;
+      }
+
+      .first-section__left-down {
+        margin-top: 0;
+        width: 40%;
+      }
+    }
+  }
+}
